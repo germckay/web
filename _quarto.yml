@@ -3,13 +3,19 @@ project:
   output-dir: docs
 
 website:
-  title: "web"
+  title: "Never Graduated"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: blog_posts.qmd
+        text: posts
+    right:
       - about.qmd
-
+      - icon: github [1]
+        href: https://github.com/germckay
+      - icon: linkedin [1]
+        href: https://linkedin.com/in/mckay-gerratt/
 format:
   html:
     theme: cosmo

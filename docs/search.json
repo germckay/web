@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "web",
+    "title": "Never Graduated",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 2\n\n[1] 3\n\n\nWant to see how this looks, updating a little bit"
+    "text": "Welcome to my website!"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,33 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "blog_posts.html",
+    "href": "blog_posts.html",
+    "title": "posts",
+    "section": "",
+    "text": "running R in browser\n\n\n\nQuarto\n\n\nblog\n\n\nwebsite\n\n\nR\n\n\n\nusing webr to run r code without use of app\n\n\n\nMcKay Gerratt\n\n\nFeb 6, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2025_02_06_test/index.html",
+    "href": "posts/2025_02_06_test/index.html",
+    "title": "running R in browser",
+    "section": "",
+    "text": "Just testing how this works"
+  },
+  {
+    "objectID": "posts/2025_02_06_test/index.html#run-r-in-browser",
+    "href": "posts/2025_02_06_test/index.html#run-r-in-browser",
+    "title": "running R in browser",
+    "section": "Run R in browser",
+    "text": "Run R in browser\n\n  \n    WebR Test Console\n  \n  \n    \n      Loading webR, please wait...\n      \n      Run"
+  },
+  {
+    "objectID": "posts/2025_02_06_test/index.html#showing-plots",
+    "href": "posts/2025_02_06_test/index.html#showing-plots",
+    "title": "running R in browser",
+    "section": "Showing Plots",
+    "text": "Showing Plots"
   }
 ]
