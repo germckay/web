@@ -6,7 +6,7 @@ author:
 date: 12-18-2025
 categories: [boardgames, js, r]
 image: preview.jpg
-draft: false
+draft: true
 format: 
   html:
     embed-resources: true

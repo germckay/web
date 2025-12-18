@@ -70,20 +70,6 @@
     "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      Run"
   },
   {
-    "objectID": "posts/2025_02_10_sr/index.html",
-    "href": "posts/2025_02_10_sr/index.html",
-    "title": "Star Realms",
-    "section": "",
-    "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      \n      Run"
-  },
-  {
-    "objectID": "posts/2025_02_10_sr/index.html#star-realms",
-    "href": "posts/2025_02_10_sr/index.html#star-realms",
-    "title": "Star Realms",
-    "section": "",
-    "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      \n      Run"
-  },
-  {
     "objectID": "posts/2025_02_06_test/index.html#explanation",
     "href": "posts/2025_02_06_test/index.html#explanation",
     "title": "Running R on a Webpage",
@@ -96,5 +82,19 @@
     "title": "Displaying R Plots on a Webpage",
     "section": "",
     "text": "Here is a link to the example from WebR Documentation."
+  },
+  {
+    "objectID": "posts/2025_02_10_sr/index.html",
+    "href": "posts/2025_02_10_sr/index.html",
+    "title": "Star Realms",
+    "section": "",
+    "text": "Input the log from your game below to see a display of authority throughout the game.\n\n  \n    Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      \n      Run\n    \n    \n    \n    \n    \n    \n  \n\n\n\nI enjoy playing the game Star Realms, a game where players battle it out using fleets of space ships to see who is the last remaining. As I am more familiar with R, I wrote code that extracts information about the game by turn, including authority, cards gained, cards scrapped, and more. After learning about WebR, I was curious to see if I could run a simplified version of the script that looks only at authority for both players throughout the game. After a bit of learning and research, was able to do so. You can copy your game log and paste it in the text box above, click run, and see a display of authority levels throughout the game."
+  },
+  {
+    "objectID": "posts/2025_02_10_sr/index.html#explanation",
+    "href": "posts/2025_02_10_sr/index.html#explanation",
+    "title": "Star Realms",
+    "section": "",
+    "text": "I enjoy playing the game Star Realms, a game where players battle it out using fleets of space ships to see who is the last remaining. As I am more familiar with R, I wrote code that extracts information about the game by turn, including authority, cards gained, cards scrapped, and more. After learning about WebR, I was curious to see if I could run a simplified version of the script that looks only at authority for both players throughout the game. After a bit of learning and research, was able to do so. You can copy your game log and paste it in the text box above, click run, and see a display of authority levels throughout the game."
   }
 ]
