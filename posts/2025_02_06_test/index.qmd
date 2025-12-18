@@ -1,5 +1,5 @@
 ---
-title: "running R in browser"
+title: "Running R on a Webpage"
 description: "using webr to run r code without use of app"
 author: 
   - name: McKay Gerratt
@@ -9,9 +9,7 @@ image: preview.jpg
 draft: false
 ---
 
-Just testing how this works
-
-## Run R in browser
+# Run R in browser
 
 ```{=html}
 <html>
@@ -53,46 +51,8 @@ Just testing how this works
 </html>
 ```
 
-## Showing Plots
+## Explanation
 
-```{=html}
-<html>
-  <head>
-    <title>WebR Test Console</title>
-  </head>
-  <body>
-    <div>
-      <pre><code id="out">Loading webR, please wait...</code></pre>
-      <input spellcheck="false" autocomplete="off" id="input" type="text">
-      <button onclick="globalThis.sendInput()" id="run">Run</button>
-    </div>
-    
-    <script type="module">
-      /* Create a webR console using the Console helper class */
-      import { Console } from 'https://webr.r-wasm.org/latest/webr.mjs';
-      const webRConsole = new Console({
-        stdout: line => document.getElementById('out').append(line + '\n'),
-        stderr: line => document.getElementById('out').append(line + '\n'),
-        prompt: p => document.getElementById('out').append(p),
-      });
-      webRConsole.run();
-      
-      /* Write to the webR console using the ``stdin()`` method */
-      let input = document.getElementById('input');
-      globalThis.sendInput = () => {
-        webRConsole.stdin(input.value);
-        document.getElementById('out').append(input.value + '\n');
-        input.value = "";
-      }
-      
-      /* Send input on Enter key */
-      input.addEventListener(
-        "keydown",
-        (evt) => {if(evt.keyCode === 13) globalThis.sendInput()}
-      );
-    </script>
-  </body>
-</html>
-```
+I am interested in learning more about the internet and websites. I am an R enthusiast and want to blend the two where I can. I learned recently about WebR and was curious to see how it worked. I saw this example on how to create an environment where you can execute R code on a webpage and tried it out. Here is a link to the example from [WebR Documentation](https://docs.r-wasm.org/webr/latest/examples.html#creating-an-interactive-webr-repl-console).
 
 

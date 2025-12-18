@@ -18,14 +18,14 @@
     "href": "blog_posts.html",
     "title": "posts",
     "section": "",
-    "text": "running R in browser\n\n\n\nQuarto\n\n\nblog\n\n\nwebsite\n\n\nR\n\n\n\nusing webr to run r code without use of app\n\n\n\nMcKay Gerratt\n\n\nFeb 6, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Displaying R Plots on a Webpage\n\n\n\nggplot\n\n\nplotly\n\n\nblog\n\n\nwebsite\n\n\nR\n\n\n\ndisplay plots on webpage using R’s ggplot and plotly\n\n\n\nMcKay Gerratt\n\n\nFeb 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRunning R on a Webpage\n\n\n\nQuarto\n\n\nblog\n\n\nwebsite\n\n\nR\n\n\n\nusing webr to run r code without use of app\n\n\n\nMcKay Gerratt\n\n\nFeb 6, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2025_02_06_test/index.html",
     "href": "posts/2025_02_06_test/index.html",
-    "title": "running R in browser",
+    "title": "Running R on a Webpage",
     "section": "",
-    "text": "Just testing how this works"
+    "text": "WebR Test Console\n  \n  \n    \n      Loading webR, please wait...\n      \n      Run\n    \n    \n    \n  \n\n\n\nI am interested in learning more about the internet and websites. I am an R enthusiast and want to blend the two where I can. I learned recently about WebR and was curious to see how it worked. I saw this example on how to create an environment where you can execute R code on a webpage and tried it out. Here is a link to the example from WebR Documentation."
   },
   {
     "objectID": "posts/2025_02_06_test/index.html#run-r-in-browser",
@@ -40,5 +40,61 @@
     "title": "running R in browser",
     "section": "Showing Plots",
     "text": "Showing Plots"
+  },
+  {
+    "objectID": "posts/2025_02_06_test2/index.html",
+    "href": "posts/2025_02_06_test2/index.html",
+    "title": "Displaying R Plots on a Webpage",
+    "section": "",
+    "text": "Plotly Example\n    \n    \n  \n  \n  \n    \n      Loading webR, please wait...\n    \n    \n    \n  \n\n\n\nHere is a link to the example from WebR Documentation."
+  },
+  {
+    "objectID": "posts/2025_02_06_test2/index.html#plots",
+    "href": "posts/2025_02_06_test2/index.html#plots",
+    "title": "plots in browser",
+    "section": "plots",
+    "text": "plots\n\n  \n    Plotly Example\n    \n    \n  \n  \n  \n    \n      Loading webR, please wait..."
+  },
+  {
+    "objectID": "posts/2025_02_10_sr_test/index.html",
+    "href": "posts/2025_02_10_sr_test/index.html",
+    "title": "Star Realms",
+    "section": "",
+    "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      Run"
+  },
+  {
+    "objectID": "posts/2025_02_10_sr_test/index.html#star-realms-this-is-new",
+    "href": "posts/2025_02_10_sr_test/index.html#star-realms-this-is-new",
+    "title": "Star Realms",
+    "section": "",
+    "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      Run"
+  },
+  {
+    "objectID": "posts/2025_02_10_sr/index.html",
+    "href": "posts/2025_02_10_sr/index.html",
+    "title": "Star Realms",
+    "section": "",
+    "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      \n      Run"
+  },
+  {
+    "objectID": "posts/2025_02_10_sr/index.html#star-realms",
+    "href": "posts/2025_02_10_sr/index.html#star-realms",
+    "title": "Star Realms",
+    "section": "",
+    "text": "Plotly Example\n    \n    \n  \n  \n    \n      Loading webR, please wait...\n      \n      \n      Run"
+  },
+  {
+    "objectID": "posts/2025_02_06_test/index.html#explanation",
+    "href": "posts/2025_02_06_test/index.html#explanation",
+    "title": "Running R on a Webpage",
+    "section": "",
+    "text": "I am interested in learning more about the internet and websites. I am an R enthusiast and want to blend the two where I can. I learned recently about WebR and was curious to see how it worked. I saw this example on how to create an environment where you can execute R code on a webpage and tried it out. Here is a link to the example from WebR Documentation."
+  },
+  {
+    "objectID": "posts/2025_02_06_test2/index.html#explanation",
+    "href": "posts/2025_02_06_test2/index.html#explanation",
+    "title": "Displaying R Plots on a Webpage",
+    "section": "",
+    "text": "Here is a link to the example from WebR Documentation."
   }
 ]

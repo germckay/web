@@ -1,0 +1,139 @@
+---
+title: "Star Realms"
+description: "Use your log to get a visual representation of your game"
+author: 
+  - name: McKay Gerratt
+date: 12-18-2025
+categories: [boardgames, js, r]
+image: preview.jpg
+draft: false
+format: 
+  html:
+    embed-resources: true
+---
+
+
+
+# Authority Tracker 
+
+Input the log from your game below to see a display of authority throughout the game.
+
+```{=html}
+<html>
+  <head>
+    <title>Plotly Example</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.2/plotly.min.js"
+      charset="utf-8"
+    ></script>
+    <style>
+        #out {
+            width: 60vw;
+            height: 75vh;
+            background-color: lightblue;
+            border: 1px solid #000;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <pre><code id="out">Loading webR, please wait...</code></pre>
+      <textarea spellcheck="false" autocomplete="off" id="input" ></textarea>
+      <!-- <input spellcheck="false" autocomplete="off" id="input" type="text"> -->
+      <button onclick="globalThis.sendInput()" id="run">Run</button>
+    </div>
+    <!-- <div> -->
+    <!--   <pre><code id="out">Loading webR, please wait...</code></pre> -->
+    <!-- </div> -->
+    
+    <script type="module">
+      import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
+      const webR = new WebR({ interactive: false });
+      await webR.init();
+      const outElem = document.getElementById('out');
+      outElem.innerText = 'Loading plotly, please wait...';
+      await webR.installPackages(['jsonlite', 'ggplot2', 'plotly', 'stringr', 'tidyr'], true);
+      let input = document.getElementById('input');
+      globalThis.sendInput = async function()  {
+        
+      outElem.innerText = 'Generating plot, please wait...';
+      let plotlyData = await webR.evalRString(String.raw`
+library(plotly)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+library(jsonlite)
+
+
+x <- "${String(input.value)}"
+print(x)
+
+
+### Dividing into turns
+y <- unlist(strsplit(gsub("It is now", "~It is now",   
+              x),split = "~"))
+
+### Extracting who's turn it is
+names <- (str_extract_all(string = y, pattern = "(?<=It is now ).*?(?='s turn)"))
+print(names)
+player1 <- names[[1]][1] <- names[[3]][1]
+player2 <- names[[2]][1]
+# print(player1)
+# print(player2)
+
+### Extracting turn number
+turn <- 1:length(names)
+
+# lines w authority
+lines_w_authority <-  str_extract_all(string = y, pattern = "(?<=\n).*?Authority.*(?=\n)")
+player1_authority <- lapply(str_extract, X = lapply(tail, X = lapply(grep, X = lines_w_authority, pattern = player1, value = TRUE), n = 1), pattern = "(?<=Authority:)[\\-[[:digit:]]]*?(?=\\))")
+
+player1_authority <- sapply(player1_authority, function(x) ifelse(length(x) == 0, 999, as.numeric(x)))
+player1_authority[1] <- min(player1_authority[1], 50)
+while(sum(player1_authority == 999)>0) player1_authority[which(player1_authority == 999)] <- player1_authority[which(player1_authority == 999)-1]
+
+player2_authority <- lapply(str_extract, X = lapply(tail, X = lapply(grep, X = lines_w_authority, pattern = player2, value = TRUE), n = 1), pattern = "(?<=Authority:)[\\-[[:digit:]]]*?(?=\\))")
+player2_authority <- sapply(player2_authority, function(x) ifelse(length(x) == 0, 999, as.numeric(x)))
+player2_authority[1] <- min(player2_authority[1], 50)
+while(sum(player2_authority == 999)>0) player2_authority[which(player2_authority == 999)] <- player2_authority[which(player2_authority == 999)-1]
+
+
+# Data frame
+# # # Adding Turn Number, Player, Authority
+turn_df <- data.frame("Turn" = turn, "Whose" = paste0(rep("Player", length(turn)), 1:2), "Player1" = player1_authority, "Player2" = player2_authority)
+
+# Plotting
+turn_df_long <- turn_df %>% pivot_longer(Player1:Player2, values_to = "Authority")
+
+rect <- data.frame(xstart = turn-0.5, xend = turn+0.5, col = turn_df$Whose)
+
+p <- ggplot() + 
+      geom_line(turn_df_long, mapping = aes(x = Turn, y = Authority, group = name, color = name), size = 1) + 
+      geom_rect(data = rect, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf, fill = col), alpha = .1) + 
+      theme_bw() + 
+      guides(fill = "none") + 
+      labs(color = "Player")
+
+plotly_json(p, pretty = FALSE)
+#toJSON(df, dataframe="columns")
+`);
+      outElem.replaceChildren();
+      Plotly.newPlot('out', JSON.parse(plotlyData), {});
+      //console.log(plotlyData);
+        input.value = "";
+      }
+      
+      /* Send input on Enter key */
+      input.addEventListener(
+        "keydown",
+        (evt) => {if(evt.keyCode === 13) globalThis.sendInput()}
+      );
+    </script>
+  </body>
+</html>
+```
+
+## Explanation
+
+I enjoy playing the game Star Realms, a game where players battle it out using fleets of space ships to see who is the last remaining. As I am more familiar with R, I wrote code that extracts information about the game by turn, including authority, cards gained, cards scrapped, and more. After learning about WebR, I was curious to see if I could run a simplified version of the script that looks only at authority for both players throughout the game. After a bit of learning and research, was able to do so. You can copy your game log and paste it in the text box above, click run, and see a display of authority levels throughout the game. 
+

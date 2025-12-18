@@ -1,3 +1,9 @@
-freeze: auto
+# freeze: auto
 
 title-block-banner: true
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
